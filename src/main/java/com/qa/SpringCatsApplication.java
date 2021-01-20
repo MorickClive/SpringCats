@@ -10,7 +10,7 @@ public class SpringCatsApplication {
 	public static void main(String[] args) {
 		ApplicationContext beanBag  = SpringApplication.run(SpringCatsApplication.class, args);
 		
-		System.out.println("The current time is : " + beanBag.getBean("getTime", String.class) );
+		System.out.println("The current time is : " + beanBag.getBean("getTime", String.class) );	
 	}
 
 }

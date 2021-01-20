@@ -1,14 +1,26 @@
 package com.qa.persistence.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class HouseDomain {
 
 	@Id
@@ -17,37 +29,8 @@ public class HouseDomain {
 
 	@NotNull
 	private String name;
-
-	public HouseDomain(Long id, @NotNull String name) {
-		super();
-		Id = id;
-		this.name = name;
-	}
-
-	public HouseDomain() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Long getId() {
-		return Id;
-	}
-
-	public void setId(Long id) {
-		Id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	@Override
-	public String toString() {
-		return "HouseDomain [Id=" + Id + ", name=" + name + "]";
-	}
-
+	
+	@OneToMany(mappedBy = "house", fetch = FetchType.EAGER)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	private List<CatDomain> catList;
 }
