@@ -18,4 +18,36 @@ public class HouseDomain {
 	@NotNull
 	private String name;
 
+	public HouseDomain(Long id, @NotNull String name) {
+		super();
+		Id = id;
+		this.name = name;
+	}
+
+	public HouseDomain() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "HouseDomain [Id=" + Id + ", name=" + name + "]";
+	}
+
 }
