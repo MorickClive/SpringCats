@@ -1,32 +1,20 @@
 package com.qa.persistence.dto;
 
+import java.util.List;
+
+import com.qa.persistence.domain.CatDomain;
+import com.qa.persistence.domain.HouseDomain;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class HouseDTO {
 	
 	private Long Id;
 	private String name;
-	@Override
-	public String toString() {
-		return "HouseDTO [Id=" + Id + ", name=" + name + "]";
-	}
-	public Long getId() {
-		return Id;
-	}
-	public void setId(Long id) {
-		Id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public HouseDTO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public HouseDTO(Long id, String name) {
-		super();
-		Id = id;
-		this.name = name;
-	}
+	private List<CatDTO> catlist;
 }

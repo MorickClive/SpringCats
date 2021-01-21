@@ -4,11 +4,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CatDomain {
 
 	@Id
@@ -22,58 +28,8 @@ public class CatDomain {
 	private int age;
 	
 	private float speechVolume;
-
-	// Empty Constructor
-	public CatDomain() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	// Full Constructor
-	public CatDomain(Long id, String name, int age, float speechVolume) {
-		super();
-		Id = id;
-		this.name = name;
-		this.age = age;
-		this.speechVolume = speechVolume;
-	}
-
-	// Get/Set
-	public Long getId() {
-		return Id;
-	}
-
-	public void setId(Long id) {
-		Id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-	public float getSpeechVolume() {
-		return speechVolume;
-	}
-
-	public void setSpeechVolume(float speechVolume) {
-		this.speechVolume = speechVolume;
-	}
 	
-	@Override
-	public String toString() {
-		return "Cat [Id=" + Id + ", name=" + name + ", age=" + age + ", speechVolume=" + speechVolume + "]";
-	}
+	@ManyToOne
+	private HouseDomain house;
 
 }
