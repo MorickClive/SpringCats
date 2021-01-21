@@ -8,10 +8,10 @@ INSERT INTO HOUSE_DOMAIN (name) VALUES
 ('111  Fordham Rd'),
 ('84  Rowland Rd');
 
-INSERT INTO CAT_DOMAIN (name, age, speech_volume) VALUES 
-('Tesla', 10, 11.5),
-('Boris', 10, 11.5),
-('Petra', 17, 6),
-('Rhubarb', 7, 20),
-('Custard', 5, 6),
-('Tango', 11, 4.5);
+INSERT INTO CAT_DOMAIN (name, age, speech_volume, house_id) VALUES 
+('Tesla', 10, 11.5, 2),
+('Boris', 10, 11.5, 2),
+('Petra', 17, 6, 3),
+('Rhubarb', 7, 20, 4),
+('Custard', 5, 6, 4),
+('Tango', 11, 4.5, 1);
