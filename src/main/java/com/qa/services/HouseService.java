@@ -49,7 +49,7 @@ public class HouseService {
 	}
 	
 	// Update
-	public HouseDTO update(Long id, HouseDomain cat) {
+	public HouseDTO update(long id, HouseDomain cat) {
 		
 		HouseDomain updatedCat = this.repo.findById(id).orElseThrow();
 		MyBeanUtils.mergeNotNull(cat, updatedCat);

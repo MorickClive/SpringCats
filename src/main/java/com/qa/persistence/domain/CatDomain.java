@@ -12,9 +12,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class CatDomain {
 
 	@Id
@@ -26,10 +26,17 @@ public class CatDomain {
 	
 	@NotNull
 	private int age;
-	
 	private float speechVolume;
 	
 	@ManyToOne
 	private HouseDomain house;
 
+	public CatDomain(@NotNull String name, @NotNull int age, float speechVolume, HouseDomain house) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.speechVolume = speechVolume;
+		this.house = house;
+	}
+	
 }

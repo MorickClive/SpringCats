@@ -18,9 +18,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class HouseDomain {
 
 	@Id
@@ -32,6 +32,5 @@ public class HouseDomain {
 	
 	@OneToMany(mappedBy = "house", fetch = FetchType.EAGER)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	private List<CatDomain> catlist;
-
+	private List<CatDomain> catList;
 }
